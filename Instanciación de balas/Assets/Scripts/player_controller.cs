@@ -5,6 +5,8 @@ using UnityEngine;
 public class player_controller : MonoBehaviour
 {
     public float speedPlayer ;
+    public float liveBullet ;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class player_controller : MonoBehaviour
         }
         */
         Move();
+        //live
     }
 
     
