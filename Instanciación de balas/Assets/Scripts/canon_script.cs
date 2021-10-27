@@ -11,11 +11,37 @@ public class canon_script : MonoBehaviour
     public bool isShoot = false;
     public float timeBullet = 30.0f ;
 
+    enum Dificutades  {Fácil, Medio, Díficil};
+    [SerializeField]private Dificutades difficulty;
 
     // Start is called before the first frame update
     void Start()
-    {
-        InvokeRepeating("Shoot", startD, spawnTiming);
+    {/*
+        switch(difficulty)
+        {
+            case 1:
+                Debug.Log("Modo Fácil");
+                InvokeRepeating("Shoot", (startD+3.0f), (spawnTiming+3.0f));
+
+                break;
+            
+            case 2:
+                Debug.Log("Modo Medio");
+                InvokeRepeating("Shoot", startD, spawnTiming);
+
+                break;
+
+            case 3:
+                Debug.Log("Modo Difícil");
+                InvokeRepeating("Shoot", (startD-1.0f), (spawnTiming-1.0f));
+
+                break;
+            
+            default:
+                Debug.Log("M");
+                break;
+        }*/
+       // InvokeRepeating("Shoot", startD, spawnTiming);
 
     }
 

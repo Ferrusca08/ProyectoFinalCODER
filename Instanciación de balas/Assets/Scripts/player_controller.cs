@@ -41,7 +41,7 @@ public class player_controller : MonoBehaviour
     {
         float ejeHorizontal = Input.GetAxisRaw("Horizontal");
         float ejeVertical = Input.GetAxisRaw("Vertical");
-        transform.Translate(speedPlayer* Time.deltaTime * new Vector3 (ejeVertical,0,ejeHorizontal));
+        transform.Translate(speedPlayer * Time.deltaTime * new Vector3(-ejeVertical, 0, ejeHorizontal));
 
     }
     
@@ -50,4 +50,10 @@ public class player_controller : MonoBehaviour
     private void MovePlayer(Vector3 direccion){
         transform.Translate(speedPlayer* Time.deltaTime *direccion);
     }
+    private void RotatePlayer(){
+        float cameraAxis =+ Input.GetAxisRaw("Mouse X");
+        Quaternion angulo = Quaternion.Euler(0,cameraAxis,0);
+        transform.localRotation = angulo;
+    }
 }
+
